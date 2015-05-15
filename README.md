@@ -18,7 +18,7 @@ A simple keepalived container to provide a VIP on docker containers.
 
     `VIRTUAL_IP`: virtual IP address. `required`
 
-    `INSTANCE_PRIORITY`: must be an integer value (100, 90, 80 ...). Default: 100. If you run a SLAVE instance, you need to type the value less than MASTER value (`required` for SLAVE instance)
+    `INSTANCE_PRIORITY`: must be an integer value (101, 100, ...). Default: 101. If you run a SLAVE instance, you need to type the value less than MASTER value (`required` for SLAVE instance)
 
     `HAPROXY_IP`: Default: 127.0.0.1
 
@@ -48,7 +48,7 @@ running MASTER failover
 ####LB2
 running SLAVE failover
 
-`docker run -d --name failover --net=host --privileged --cap-add=NET_ADMIN -e "VIRTUAL_IP=192.168.0.100" -e "INSTANCE_PRIORITY=90" -e "INSTANCE_STATE=BACKUP" qapps/failover`
+`docker run -d --name failover --net=host --privileged --cap-add=NET_ADMIN -e "VIRTUAL_IP=192.168.0.100" -e "INSTANCE_PRIORITY=100" -e "INSTANCE_STATE=BACKUP" qapps/failover`
 
 
 Installation completed! You can now access your application through VIP, 192.168.0.100 port 1883.
