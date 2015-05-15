@@ -38,7 +38,7 @@ A simple keepalived container to provide a VIP on docker containers.
 
 ####Run keepalived
 
-you need to run keepalived container on each HAProxy node.
+you need to run keepalived container on each of HAProxy node.
 
 ####LB1
 running MASTER failover
